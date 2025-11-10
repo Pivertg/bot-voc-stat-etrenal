@@ -9,7 +9,7 @@ CHANNEL_ONLINE = 1437547143475757209
 
 # Configuration règlement
 RULES_MESSAGE_ID = 1437555076049801227
-VERIFIED_ROLE_ID = 1437555076049801227
+VERIFIED_ROLE_ID = 1437189436545962064
 
 # Intents nécessaires
 intents = discord.Intents.default()
@@ -225,4 +225,5 @@ async def start_bot(token):
         import traceback
         traceback.print_exc()
         raise
+
 
