@@ -43,7 +43,7 @@ async def on_ready():
 # 📊 SYSTÈME DE STATISTIQUES
 # ========================================
 
-@tasks.loop(minutes=5)
+@tasks.loop(minutes=1)
 async def update_stats():
     """Met à jour les statistiques du serveur"""
     try:
@@ -225,3 +225,4 @@ async def start_bot(token):
         import traceback
         traceback.print_exc()
         raise
+
