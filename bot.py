@@ -164,17 +164,6 @@ async def on_raw_reaction_add(payload):
     try:
         await member.add_roles(role)
         print(f"✅ Rôle '{role.name}' ajouté à {member.name}")
-        
-        # Envoyer un message de bienvenue en MP (optionnel)
-        try:
-            embed = discord.Embed(
-                title="✅ Bienvenue !",
-                description=f"Tu as accepté le règlement de **{guild.name}** !\nTu as maintenant accès à tout le serveur. Amuse-toi bien ! 🎉",
-                color=discord.Color.green()
-            )
-            await member.send(embed=embed)
-        except discord.Forbidden:
-            pass  # L'utilisateur a bloqué les MPs
             
     except discord.Forbidden:
         print(f"❌ Permissions insuffisantes pour ajouter le rôle à {member.name}")
@@ -208,7 +197,6 @@ async def on_raw_reaction_remove(payload):
         print(f"⚠️ Rôle '{role.name}' retiré de {member.name}")
     except Exception as e:
         print(f"❌ Erreur retrait rôle: {e}")
-
 # ========================================
 # 🚀 DÉMARRAGE
 # ========================================
@@ -225,5 +213,6 @@ async def start_bot(token):
         import traceback
         traceback.print_exc()
         raise
+
 
 
